@@ -7,6 +7,7 @@ import ssl
 import threading
 from asyncio.selector_events import BaseSelectorEventLoop
 from typing import Dict, List, Match, Optional, Union
+from urllib.parse import parse_qs, unquote, urlencode, urlparse
 
 import requests
 from flask_cors import CORS
@@ -18,7 +19,6 @@ from flask_cors.core import (
     ACL_REQUEST_HEADERS,
 )
 from requests.models import Request, Response
-from six.moves.urllib.parse import parse_qs, unquote, urlencode, urlparse
 from werkzeug.exceptions import HTTPException
 
 from localstack import config
