@@ -492,6 +492,12 @@ def update_path_in_url(base_url: str, path: str) -> str:
 
 
 def with_context(fn: Callable):
+    """
+    call the wrapped function in a context provided by :RequestContextManager
+    :param fn:
+    :return:
+    """
+
     def decorator(func):
         @functools.wraps(func)
         def wrapper(*args, **kwargs):
