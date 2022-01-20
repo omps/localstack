@@ -1269,31 +1269,6 @@ def _get_host(context: RequestContext):
     return context.request.host_url
 
 
-# # FIXME: this needs refactoring or to be moved, importing too much of config
-# def _get_host(context: RequestContext):
-#
-#     external_port = _get_external_port(context)
-#
-#     # if there are no special ports set in the headers we want config to look for ports as usual
-#     if external_port == EDGE_PORT or external_port == EDGE_PORT_HTTP:
-#         external_port = None
-#     return external_service_url("sqs", port=external_port)
-#
-#
-# # TODO: should this be moved to config.py?
-# def _get_external_port(context: RequestContext):
-#     headers = context.request.headers
-#     host = headers.get("Host", "")
-#     if not host:
-#         forwarded = [header[1] for header in headers if header[0].lower() == "x-forwarded-for"][
-#             0
-#         ].split(",")
-#         host = forwarded[-2] if len(forwarded) > 2 else forwarded[-1]
-#
-#     if ":" in host:
-#         return int(host.split(":")[1])
-
-
 def _create_mock_sequence_number():
     return "".join(random.choice(string.digits) for _ in range(20))
 
