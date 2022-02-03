@@ -8,7 +8,7 @@ services:
     ports:
       - "127.0.0.1:53:53"                # only required for Pro
       - "127.0.0.1:53:53/udp"            # only required for Pro
-      - "127.0.0.1:443:443"              # only required for Pro
+      - "127.0.0.1:444:443"              # only required for Pro
       - "127.0.0.1:4510-4530:4510-4530"
       - "127.0.0.1:4566:4566"
       - "127.0.0.1:4571:4571"
